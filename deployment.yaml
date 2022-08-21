@@ -18,7 +18,7 @@ spec:
         app: webserver
     spec:
       containers:
-      - image: mondab2/docker
+      - image: mondab2/deploy-kub-clu-webpage
         name: webserver
         ports:
         - containerPort: 80
