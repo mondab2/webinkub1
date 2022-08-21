@@ -1,14 +1,13 @@
 - hosts: kubemaster
   tasks:
-   - name: delete deployment in cluster
-     shell: kubectl delete deployment 
-   - name: delete namespace 
-     shell: kubectl create ns webapp
-   - name: stop kubernet cluster
-     shell: kubectl 
-   - name: remove container
-     shell: docker container rm mydockercontainer
-   - name: remove docker image
-     shell: docker image rmi mondab2/docker-webapp
-   - name: create new container
-     shell: docker container run -itd --name mydockercontainer -p 9000:80 mondab2/docker-webapp
+   - name: delete deployment in namespace
+     shell: kubectl delete deployment webserver -n webserver-ns
+   - name: delete services in namespace
+     shell: kubectl delete service webserver -n webserver-ns
+   - name: delete namespace
+     shell: kubectl delete namespace webserver-ns 
+   - name: create new namesapce webserver
+     shell: kubectl create ns webserver-ns
+   - name: create new deployment in webserver namespace
+     shell: kubectl create -f deployment.yml -n webserver-ns
+
