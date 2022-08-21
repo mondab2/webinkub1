@@ -21,7 +21,7 @@ spec:
       - image: mondab2/deploy-kub-clu-webpage
         name: webserver
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 
 ---
 apiVersion: v1
@@ -31,7 +31,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 80
+    targetPort: 9001
   selector:
     app: webserver
