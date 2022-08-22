@@ -9,5 +9,5 @@
    - name: create new namesapce webserver
      shell: kubectl create ns webserver-ns
    - name: create new deployment in webserver namespace
-     shell: kubectl create -f deployment.yaml -n webserver-ns
+     shell: kubectl create -f /opt/deployment.yaml -n webserver-ns
 
