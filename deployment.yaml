@@ -29,10 +29,10 @@ kind: Service
 metadata:
   name: webserver
 spec:
-  type: LoadBalancer
   ports:
   - port: 9000
     targetPort: 80
     nodePort:32100
   selector:
     app: webserver
+  type: LoadBalancer
