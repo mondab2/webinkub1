@@ -29,10 +29,9 @@ kind: Service
 metadata:
   name: webserver
 spec:
-  type: LoadBlancer
+  type: NodePort
   ports:
-  - port: 8080
+  - port: 80
     targetPort: 80
-    nodePort: 31200
   selector:
     app: webserver
